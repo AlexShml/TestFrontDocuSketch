@@ -8,10 +8,16 @@ import * as solidIcons from '@fortawesome/free-solid-svg-icons';
 })
 export class IconButtonComponent {
   randomIcon: any;
+  isIconVisible: boolean = false;
 
   showRandomIcon() {
-    const iconKeys = Object.keys(solidIcons);
-    const randomIconKey = iconKeys[Math.floor(Math.random() * iconKeys.length)];
-    this.randomIcon = solidIcons[randomIconKey as keyof typeof solidIcons];
+    this.isIconVisible = false; // Скрываем иконку перед показом новой
+    setTimeout(() => {
+      const iconKeys = Object.keys(solidIcons);
+      const randomIconKey =
+        iconKeys[Math.floor(Math.random() * iconKeys.length)];
+      this.randomIcon = solidIcons[randomIconKey as keyof typeof solidIcons];
+      this.isIconVisible = true; // Отображаем иконку после задержки
+    }, 3000);
   }
 }

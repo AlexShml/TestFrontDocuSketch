@@ -1,4 +1,4 @@
 <button (click)="showRandomIcon()">Show Random Icon</button>
-<div class="icon-container">
+<div class="icon-container" *ngIf="isIconVisible">
   <fa-icon [icon]="randomIcon"></fa-icon>
 </div>
