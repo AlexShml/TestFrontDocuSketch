@@ -11,13 +11,13 @@ export class IconButtonComponent {
   isIconVisible: boolean = false;
 
   showRandomIcon() {
-    this.isIconVisible = false; // Скрываем иконку перед показом новой
+    this.isIconVisible = false;
     setTimeout(() => {
       const iconKeys = Object.keys(solidIcons);
       const randomIconKey =
         iconKeys[Math.floor(Math.random() * iconKeys.length)];
       this.randomIcon = solidIcons[randomIconKey as keyof typeof solidIcons];
-      this.isIconVisible = true; // Отображаем иконку после задержки
+      this.isIconVisible = true;
     }, 3000);
   }
 }
